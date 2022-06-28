@@ -19,6 +19,7 @@
 		14CB9B46286A49F100FE8325 /* InstagramUITestsLaunchTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 14CB9B45286A49F100FE8325 /* InstagramUITestsLaunchTests.m */; };
 		14CB9B55286A680A00FE8325 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 14CB9B54286A680A00FE8325 /* LoginViewController.m */; };
 		14CB9B58286A6F4E00FE8325 /* HomeFeedViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 14CB9B57286A6F4E00FE8325 /* HomeFeedViewController.m */; };
+		14F33D1A286ACDD400941319 /* PhotoMapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 14F33D19286ACDD400941319 /* PhotoMapViewController.m */; };
 		A4B49A398B7BFDEA3C32E6D9 /* Pods_Instagram.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BFB9E711071CC8C183E22644 /* Pods_Instagram.framework */; };
 		B38432981F6920A62BE1B16C /* Pods_Instagram_InstagramUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0153303A711E002794246CA3 /* Pods_Instagram_InstagramUITests.framework */; };
 		C708EF17B29CA1211B8AC6DF /* Pods_InstagramTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BA2846E0992FCF64B62D5378 /* Pods_InstagramTests.framework */; };
@@ -65,6 +66,8 @@
 		14CB9B54286A680A00FE8325 /* LoginViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
 		14CB9B56286A6F4E00FE8325 /* HomeFeedViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HomeFeedViewController.h; sourceTree = "<group>"; };
 		14CB9B57286A6F4E00FE8325 /* HomeFeedViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HomeFeedViewController.m; sourceTree = "<group>"; };
+		14F33D18286ACDD400941319 /* PhotoMapViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PhotoMapViewController.h; sourceTree = "<group>"; };
+		14F33D19286ACDD400941319 /* PhotoMapViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PhotoMapViewController.m; sourceTree = "<group>"; };
 		179EF103D6760B52148C87BB /* Pods-InstagramTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-InstagramTests.debug.xcconfig"; path = "Target Support Files/Pods-InstagramTests/Pods-InstagramTests.debug.xcconfig"; sourceTree = "<group>"; };
 		8720B66135C939DDF1010681 /* Pods-InstagramTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-InstagramTests.release.xcconfig"; path = "Target Support Files/Pods-InstagramTests/Pods-InstagramTests.release.xcconfig"; sourceTree = "<group>"; };
 		9F0014A688C5E4B25F36392F /* Pods-Instagram.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Instagram.release.xcconfig"; path = "Target Support Files/Pods-Instagram/Pods-Instagram.release.xcconfig"; sourceTree = "<group>"; };
@@ -127,6 +130,7 @@
 		14CB9B1C286A49F000FE8325 /* Instagram */ = {
 			isa = PBXGroup;
 			children = (
+				14F33D1B286B68BF00941319 /* Cell */,
 				14CB9B1D286A49F000FE8325 /* AppDelegate.h */,
 				14CB9B1E286A49F000FE8325 /* AppDelegate.m */,
 				14CB9B20286A49F000FE8325 /* SceneDelegate.h */,
@@ -163,12 +167,21 @@
 		14CB9B52286A678C00FE8325 /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				14F33D18286ACDD400941319 /* PhotoMapViewController.h */,
+				14F33D19286ACDD400941319 /* PhotoMapViewController.m */,
 				14CB9B56286A6F4E00FE8325 /* HomeFeedViewController.h */,
 				14CB9B57286A6F4E00FE8325 /* HomeFeedViewController.m */,
 				14CB9B53286A680A00FE8325 /* LoginViewController.h */,
 				14CB9B54286A680A00FE8325 /* LoginViewController.m */,
 			);
 			path = "View Controllers";
+			sourceTree = "<group>";
+		};
+		14F33D1B286B68BF00941319 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Cell;
 			sourceTree = "<group>";
 		};
 		4E31209264FDEBAEFB1BE250 /* Frameworks */ = {
@@ -436,6 +449,7 @@
 				14CB9B58286A6F4E00FE8325 /* HomeFeedViewController.m in Sources */,
 				14CB9B1F286A49F000FE8325 /* AppDelegate.m in Sources */,
 				14CB9B30286A49F100FE8325 /* main.m in Sources */,
+				14F33D1A286ACDD400941319 /* PhotoMapViewController.m in Sources */,
 				14CB9B22286A49F000FE8325 /* SceneDelegate.m in Sources */,
 				14CB9B55286A680A00FE8325 /* LoginViewController.m in Sources */,
 			);

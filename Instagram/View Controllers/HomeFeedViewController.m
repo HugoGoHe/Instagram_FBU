@@ -42,6 +42,9 @@
 
 }
 
+- (IBAction)didTapNewPost:(id)sender {
+    
+}
 
 /*
 #pragma mark - Navigation
