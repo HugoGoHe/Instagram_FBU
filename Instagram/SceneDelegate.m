@@ -6,6 +6,7 @@
 //
 
 #import "SceneDelegate.h"
+#import "Parse/Parse.h"
 
 @interface SceneDelegate ()
 
@@ -18,6 +19,31 @@
     // Use this method to optionally configure and attach the UIWindow `window` to the provided UIWindowScene `scene`.
     // If using a storyboard, the `window` property will automatically be initialized and attached to the scene.
     // This delegate does not imply the connecting scene or session are new (see `application:configurationForConnectingSceneSession` instead).
+    ParseClientConfiguration *config = [ParseClientConfiguration  configurationWithBlock:^(id<ParseMutableClientConfiguration> configuration) {
+
+        configuration.applicationId = @"nyIdrVZyXx0vSHXE0GLtPf03iFzV3A1p06U1OiBH";
+        configuration.clientKey = @"fL19eEjkQYAZIEByzwrjT4afEUe3plZeQNrhqfBY";
+        configuration.server = @"https://parseapi.back4app.com";
+    }];
+
+    [Parse initializeWithConfiguration:config];
+    
+    PFObject *gameScore = [PFObject objectWithClassName:@"GameScore"];
+    gameScore[@"score"] = @1337;
+    gameScore[@"playerName"] = @"Sean Plott";
+    gameScore[@"cheatMode"] = @NO;
+    [gameScore saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+        if (succeeded) {
+            NSLog(@"Object saved!");
+        } else {
+            NSLog(@"Error: %@", error.description);
+        }
+    }];
+    if (PFUser.currentUser) {
+        UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+        
+        self.window.rootViewController = [storyboard instantiateViewControllerWithIdentifier:@"HomeFeedViewController"];
+    }
 }
 
 
