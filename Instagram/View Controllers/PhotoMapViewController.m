@@ -9,12 +9,13 @@
 #import "HomeFeedViewController.h"
 #import "AppDelegate.h"
 #import "SceneDelegate.h"
-
+#import "Post.h"
 
 
 @interface PhotoMapViewController () <UITableViewDelegate, UITableViewDataSource, UIImagePickerControllerDelegate, UINavigationControllerDelegate>
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *cancelButton;
 @property (weak, nonatomic) IBOutlet UIImageView *imgView;
+@property (weak, nonatomic) IBOutlet UITextField *captionText;
 
 @end
 
@@ -63,6 +64,7 @@
 
     // Do something with the images (based on your use case)
     
+    
     // Dismiss UIImagePickerController to go back to your original view controller
     [self dismissViewControllerAnimated:YES completion:nil];
 }
@@ -76,6 +78,32 @@
 
 }
 
+- (IBAction)didTapShare:(id)sender {
+  //  self.imgView.image = [self resizeImage:self.imgView.image withSize:CGSizeMake(10.0, 10.0)];
+    [Post postUserImage:self.imgView.image withCaption:self.captionText.text withCompletion:nil];
+    
+    SceneDelegate *myDelegate = (SceneDelegate *)self.view.window.windowScene.delegate;
+    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+    HomeFeedViewController *homeFeedViewController = [storyboard instantiateViewControllerWithIdentifier:@"HomeFeedViewController"];
+    myDelegate.window.rootViewController = homeFeedViewController;
+    
 
+    [self.delegate didPost];
+    
 
+}
+
+- (UIImage *)resizeImage:(UIImage *)image withSize:(CGSize)size {
+    UIImageView *resizeImageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, size.width, size.height)];
+    
+    resizeImageView.contentMode = UIViewContentModeScaleAspectFill;
+    resizeImageView.image = image;
+    
+    UIGraphicsBeginImageContext(size);
+    [resizeImageView.layer renderInContext:UIGraphicsGetCurrentContext()];
+    UIImage *newImage = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    
+    return newImage;
+}
 @end

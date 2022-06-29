@@ -11,6 +11,9 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface LoginViewController : ViewController
 
+@property (strong, nonatomic) IBOutlet UITextField *usernameTextField;
+@property (strong, nonatomic) IBOutlet UITextField *passwordTextField;
+
 @end
 
 NS_ASSUME_NONNULL_END
