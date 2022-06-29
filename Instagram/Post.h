@@ -5,6 +5,7 @@
 //  Created by Hugo Gomez Herrera on 6/28/22.
 //
 
+
 #import <Foundation/Foundation.h>
 #import "Parse/Parse.h"
 
@@ -24,6 +25,5 @@ NS_ASSUME_NONNULL_BEGIN
 + (void) postUserImage: ( UIImage * _Nullable )image withCaption: ( NSString * _Nullable )caption withCompletion: (PFBooleanResultBlock  _Nullable)completion;
 //+(instancetype)initWithParameters:( UIImage * _Nullable )image withCaption: ( NSString * _Nullable )caption withCompletion: (PFBooleanResultBlock  _Nullable)completion;
 @end
-
 
 NS_ASSUME_NONNULL_END
