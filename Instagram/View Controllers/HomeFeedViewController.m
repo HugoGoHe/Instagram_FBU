@@ -13,6 +13,7 @@
 #import "PostCell.h"
 #import "Post.h"
 #import "PhotoMapViewController.h"
+#import "DetailsPageViewController.h"
 
 @interface HomeFeedViewController ()<UITableViewDataSource,UITableViewDelegate, PhotoMapViewControllerDelegate>
 
@@ -114,15 +115,9 @@
     
 }
 
-/*
-#pragma mark - Navigation
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
+
+
 
 - (nonnull UITableViewCell *)tableView:(nonnull UITableView *)tableView cellForRowAtIndexPath:(nonnull NSIndexPath *)indexPath {
     
@@ -130,7 +125,7 @@
     
     Post *post1 = self.arrayOfPosts[indexPath.row];
     
-    cell.post = self.arrayOfPosts[indexPath.row];
+   // cell.post = self.arrayOfPosts[indexPath.row];
     NSData *imageData = [[NSData alloc] initWithContentsOfURL:[NSURL URLWithString:post1.image.url]];
     cell.picture.image = [UIImage imageWithData:imageData];
     cell.userNameLabel.text = post1.userID;
@@ -138,7 +133,7 @@
     cell.numberOfFavs.text = [NSString stringWithFormat:@"%@",post1.likeCount];
     cell.caption.text = post1.caption;
   //  cell.userNameLabel2 =
-   // cell.postedAtLabel =
+   // cell.postedAtLabel = post1.postID;
     NSLog(@"%@", post1);
     
     return cell;
@@ -149,5 +144,24 @@
     return self.arrayOfPosts.count;
 }
 
+#pragma mark - Navigation
+
+// In a storyboard-based application, you will often want to do a little preparation before navigation
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    // Get the new view controller using [segue destinationViewController].
+    // Pass the selected object to the new view controller.
+    if([[segue identifier] isEqualToString:@"details"]){
+        NSIndexPath *myIndexPath = [self.tableView indexPathForCell:sender];
+        NSInteger index = myIndexPath.row;
+        UINavigationController *navigationController = [segue destinationViewController];
+        Post *selectedPost = self.arrayOfPosts[index];
+        DetailsPageViewController *detailsPageVC  = (DetailsPageViewController*) navigationController.topViewController;
+        
+       detailsPageVC.selectedPost = selectedPost;
+//        detailsPageVC.delegate = self;
+
+        
+    }
+}
 
 @end

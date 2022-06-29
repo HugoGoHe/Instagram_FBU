@@ -60,7 +60,7 @@
     
     // Get the image captured by the UIImagePickerController
     self.imgView.image =  info[UIImagePickerControllerOriginalImage];
-    UIImage *editedImage = info[UIImagePickerControllerEditedImage];
+    //UIImage *editedImage = info[UIImagePickerControllerEditedImage];
 
     // Do something with the images (based on your use case)
     
