@@ -36,7 +36,10 @@
             NSLog(@"User log in failed: %@", error.localizedDescription);
         } else {
             NSLog(@"User logged in successfully");
-            [self performSegueWithIdentifier:@"firstSegue" sender:nil];
+//            [self performSegueWithIdentifier:@"firstSegue" sender:nil];
+            UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+            UITabBarController *tabBarController = [storyboard instantiateViewControllerWithIdentifier:@"TabBarViewController"];
+            self.view.window.rootViewController = tabBarController;
 
             
             // display view controller that needs to shown after successful login

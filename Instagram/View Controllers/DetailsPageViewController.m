@@ -25,10 +25,7 @@
     self.caption.text = self.selectedPost.caption;
 }
 - (IBAction)didTapBack:(id)sender {
-    SceneDelegate *myDelegate = (SceneDelegate *)self.view.window.windowScene.delegate;
-    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-    HomeFeedViewController *homeFeedViewController = [storyboard instantiateViewControllerWithIdentifier:@"HomeFeedViewController"];
-    myDelegate.window.rootViewController = homeFeedViewController;
+    [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 /*

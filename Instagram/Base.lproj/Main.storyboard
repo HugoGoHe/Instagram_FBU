@@ -62,7 +62,6 @@
                     <connections>
                         <outlet property="passwordTextField" destination="3ft-im-dTT" id="jqu-lB-K5O"/>
                         <outlet property="usernameTextField" destination="rMa-Ny-Q5p" id="jwP-kQ-EKi"/>
-                        <segue destination="vTr-qZ-imy" kind="presentation" identifier="firstSegue" id="cso-a5-Vyg"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -72,13 +71,13 @@
         <!--Home Feed View Controller-->
         <scene sceneID="Jsx-t1-b5J">
             <objects>
-                <viewController id="cPT-0h-yZP" userLabel="Home Feed View Controller" customClass="HomeFeedViewController" sceneMemberID="viewController">
+                <viewController title="Home Feed" id="cPT-0h-yZP" userLabel="Home Feed View Controller" customClass="HomeFeedViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="gZl-oB-ceJ">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="Zz8-fR-b2h">
-                                <rect key="frame" x="0.0" y="56" width="414" height="752"/>
+                                <rect key="frame" x="0.0" y="88" width="414" height="691"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="PostCell" rowHeight="386" id="h20-5m-0qr" customClass="PostCell">
@@ -222,7 +221,7 @@
                     <navigationItem key="navigationItem" title="Home Feed" id="KM6-pw-DNr">
                         <barButtonItem key="leftBarButtonItem" style="plain" id="KiV-dR-aPa">
                             <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="TUb-kc-ln4">
-                                <rect key="frame" x="20" y="11" width="92" height="34.5"/>
+                                <rect key="frame" x="20" y="5" width="92" height="34.5"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="Logout"/>
@@ -233,7 +232,7 @@
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="Item" style="plain" id="bOH-Bu-Tu7">
                             <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="xgH-h6-AXV">
-                                <rect key="frame" x="302" y="8.5" width="92" height="39"/>
+                                <rect key="frame" x="302" y="2.5" width="92" height="39"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" image="Image"/>
@@ -316,13 +315,33 @@
             </objects>
             <point key="canvasLocation" x="2957.971014492754" y="841.07142857142856"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--Tab Bar Controller-->
+        <scene sceneID="Xba-O2-M1Q">
+            <objects>
+                <tabBarController storyboardIdentifier="TabBarViewController" id="k71-wA-QkW" sceneMemberID="viewController">
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="sb4-W0-5Rd">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="barTintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="selectedImageTintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="vTr-qZ-imy" kind="relationship" relationship="viewControllers" id="BZr-f1-EzX"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="bfi-nX-OwG" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1112" y="-627"/>
+        </scene>
+        <!--Home Feed-->
         <scene sceneID="WnT-I2-mmO">
             <objects>
                 <navigationController storyboardIdentifier="HomeFeedViewController" automaticallyAdjustsScrollViewInsets="NO" id="vTr-qZ-imy" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Home Feed" id="jSu-X1-rte"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="vBa-0R-xsZ">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="56"/>
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>

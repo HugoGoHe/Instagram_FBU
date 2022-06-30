@@ -71,22 +71,14 @@
 
 
 - (IBAction)didTapCancel:(id)sender {
-    SceneDelegate *myDelegate = (SceneDelegate *)self.view.window.windowScene.delegate;
-    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-    HomeFeedViewController *homeFeedViewController = [storyboard instantiateViewControllerWithIdentifier:@"HomeFeedViewController"];
-    myDelegate.window.rootViewController = homeFeedViewController;
-
+    [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 - (IBAction)didTapShare:(id)sender {
   //  self.imgView.image = [self resizeImage:self.imgView.image withSize:CGSizeMake(10.0, 10.0)];
     [Post postUserImage:self.imgView.image withCaption:self.captionText.text withCompletion:nil];
     
-    SceneDelegate *myDelegate = (SceneDelegate *)self.view.window.windowScene.delegate;
-    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-    HomeFeedViewController *homeFeedViewController = [storyboard instantiateViewControllerWithIdentifier:@"HomeFeedViewController"];
-    myDelegate.window.rootViewController = homeFeedViewController;
-    
+    [self dismissViewControllerAnimated:YES completion:nil];
 
     [self.delegate didPost];
     

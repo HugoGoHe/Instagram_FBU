@@ -128,12 +128,24 @@
    // cell.post = self.arrayOfPosts[indexPath.row];
     NSData *imageData = [[NSData alloc] initWithContentsOfURL:[NSURL URLWithString:post1.image.url]];
     cell.picture.image = [UIImage imageWithData:imageData];
-    cell.userNameLabel.text = post1.userID;
+ //   cell.userNameLabel.text = [NSString stringWithFormat:@"%@", post1.author.username];
+    cell.userNameLabel.text = post1.author.username;
    // cell.profilePicture =
     cell.numberOfFavs.text = [NSString stringWithFormat:@"%@",post1.likeCount];
     cell.caption.text = post1.caption;
-  //  cell.userNameLabel2 =
-   // cell.postedAtLabel = post1.postID;
+    cell.userNameLabel2 = cell.userNameLabel;
+    
+    NSDateComponentsFormatter *formatter = [[NSDateComponentsFormatter alloc] init];
+    formatter.unitsStyle = NSDateComponentsFormatterUnitsStyleFull;
+    formatter.allowedUnits = NSCalendarUnitYear | NSCalendarUnitMonth | NSCalendarUnitDay | NSCalendarUnitHour | NSCalendarUnitMinute | NSCalendarUnitSecond;
+    NSString *elapsed = [formatter stringFromDate:post1.createdAt toDate:[NSDate date]];
+    
+     cell.postedAtLabel.text = elapsed;
+
+    
+    
+    
+    
     NSLog(@"%@", post1);
     
     return cell;
