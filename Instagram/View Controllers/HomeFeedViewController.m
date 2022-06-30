@@ -133,7 +133,7 @@
    // cell.profilePicture =
     cell.numberOfFavs.text = [NSString stringWithFormat:@"%@",post1.likeCount];
     cell.caption.text = post1.caption;
-    cell.userNameLabel2 = cell.userNameLabel;
+    cell.userNameLabel2.text = cell.userNameLabel.text;
     
     NSDateComponentsFormatter *formatter = [[NSDateComponentsFormatter alloc] init];
     formatter.unitsStyle = NSDateComponentsFormatterUnitsStyleFull;

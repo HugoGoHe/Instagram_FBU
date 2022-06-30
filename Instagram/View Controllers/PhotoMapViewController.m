@@ -75,7 +75,7 @@
 }
 
 - (IBAction)didTapShare:(id)sender {
-  //  self.imgView.image = [self resizeImage:self.imgView.image withSize:CGSizeMake(10.0, 10.0)];
+    self.imgView.image = [self resizeImage:self.imgView.image withSize:CGSizeMake(1300, 1000)];
     [Post postUserImage:self.imgView.image withCaption:self.captionText.text withCompletion:nil];
     
     [self dismissViewControllerAnimated:YES completion:nil];
